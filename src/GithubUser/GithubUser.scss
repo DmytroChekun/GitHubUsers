@@ -1,0 +1,19 @@
+.user {
+  &__picture {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+  &__info {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__name {
+    margin-bottom: 4px;
+  }
+  &__location {
+    font-size: 18px;
+    color: #4d4c4c;
+  }
+}
