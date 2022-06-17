@@ -1,6 +1,6 @@
 import './SearchBar.css';
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = ( { setSearchValue } ) => {
 
@@ -9,19 +9,35 @@ const SearchBar = ( { setSearchValue } ) => {
         setSearchText( value );
     }
 
+    const navigate = useNavigate();
+
+    const [ shouldRedirect, setShouldRedirect ] = useState(false);
+
+    useEffect(() => {
+        if (shouldRedirect) {
+            setShouldRedirect(false);
+            setSearchValue(searchText);
+            navigate(`/${searchText}`);
+        }
+    });
+
+    const onEnterPress = event => {
+        if (event.key === "Enter") {
+            setShouldRedirect(true);
+        }
+    }
+
+
     return (
             <div className="search-bar">
                 <input className="search-bar__input" type="text"
                        placeholder="Input User Name Here"
-                       onChange={event => handleChange(event.target.value)}
+                       onChange={ event => handleChange(event.target.value) }
+                       onKeyPress={ e => onEnterPress(e) }
                 />
-                <div className="search-bar__btn-wrap"
-                     onClick={()=> setSearchValue(searchText)}
-                >
-                    <Link to={`/${searchText}`}>
-                        <button className="search-bar__button">Search User</button>
-                    </Link>
-                </div>
+
+                <button onClick={ ()=> setShouldRedirect(true) } className="search-bar__button">Search User</button>
+
             </div>
     );
 }

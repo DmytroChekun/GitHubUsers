@@ -17,9 +17,8 @@ const GithubUser = ( { searchValue, description, setDescription } ) => {
 
             })
             .then(userData => setUserData(userData))
-            .then(userData => console.log(userData))
             .catch((e) => {
-                console.log(setDescription('Something wrong. Error: ' + e.message));
+                setDescription('Something wrong. Error: ' + e.message);
             });
     }, [searchValue])
 
@@ -33,7 +32,7 @@ const GithubUser = ( { searchValue, description, setDescription } ) => {
         <>
             <img className="user__picture" src={avatar_url} alt={name} />
             <div className="user__info">
-                <div className="user__name">{name}</div>
+                <div className="user__name">{name ? name : userId}</div>
                 <div className="user__location">{location}</div>
             </div>
         </>

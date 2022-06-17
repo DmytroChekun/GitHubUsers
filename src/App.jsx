@@ -16,6 +16,7 @@ const App = () => {
                 <header className="header">
                     <h1 className="title">GitHub Users</h1>
                     <SearchBar
+                        searchValue={ searchValue }
                         setSearchValue={ setSearchValue }
                     />
                 </header>
