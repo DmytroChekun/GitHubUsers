@@ -8,7 +8,7 @@ const App = () => {
 
     const [ searchValue, setSearchValue ] = useState(null);
 
-    const [ description, setDescription ] = useState('');
+
 
     return (
         <main>
@@ -31,8 +31,6 @@ const App = () => {
                         />
                         <Route path="/:userId" element={
                             <GithubUser searchValue={ searchValue }
-                                        description={ description }
-                                        setDescription={ setDescription }
                             />
                         } />
 

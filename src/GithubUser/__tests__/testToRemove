@@ -1,0 +1,21 @@
+import { shallow } from 'enzyme';
+import GithubUser from "../GithubUser";
+
+// describe('getGithubUser', ()=> {
+//
+//
+//     it('should render component with fetched data', () => {
+//
+//         const wrappedComponent = shallow(
+//             <GithubUser searchValue={ 'Microsoft' }
+//             />)
+//         expect(wrappedComponent.find('.user__name').exists()).toEqual(true);
+//     });
+// })
+
+
+
+
+// npm i -D enzyme
+
+//  npm i -D @babel/core @babel/preset-env @babel/preset-react

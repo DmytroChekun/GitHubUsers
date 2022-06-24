@@ -31,7 +31,7 @@ const SearchBar = ( { setSearchValue } ) => {
     return (
             <div className="search-bar">
                 <input className="search-bar__input" type="text"
-                       placeholder="Input User Name Here"
+                       placeholder="Input user name here"
                        onChange={ event => handleChange(event.target.value) }
                        onKeyPress={ e => onEnterPress(e) }
                 />
